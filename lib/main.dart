@@ -1,6 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:shadcn_ui/shadcn_ui.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,9 +12,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ShadApp(
+      darkTheme: ShadThemeData(
+        brightness: Brightness.dark,
+        colorScheme: const ShadSlateColorScheme.dark(),
+      ),
       builder: (context, child) => ResponsiveBreakpoints.builder(
-        debugLog: kDebugMode,
         child: child!,
         breakpoints: [
           const Breakpoint(start: 0, end: 450, name: MOBILE),
@@ -82,8 +86,43 @@ class EyeCatch extends StatelessWidget {
       height: MediaQuery.of(context).size.height -
           const Header().preferredSize.height,
       color: Colors.grey,
-      child: const Center(
-        child: Text('EyeCatch'),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'EyeCatch',
+              style: ShadTheme.of(context).textTheme.h1Large.copyWith(
+                    fontSize: 100,
+                  ),
+            ),
+            const Gap(16),
+            // ShadButton(
+            //   text: const Text('Primary'),
+            //   size: ShadButtonSize.lg,
+            //   onPressed: () {},
+            // ),
+            ShadButton(
+              size: ShadButtonSize.lg,
+              onPressed: () {},
+              gradient: const LinearGradient(
+                colors: [
+                  Colors.cyan,
+                  Colors.indigo,
+                ],
+              ),
+              shadows: [
+                BoxShadow(
+                  color: Colors.blue.withOpacity(.4),
+                  spreadRadius: 4,
+                  blurRadius: 10,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+              text: const Text('Get your ticket'),
+            ),
+          ],
+        ),
       ),
     );
   }
