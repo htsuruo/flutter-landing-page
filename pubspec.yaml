@@ -9,8 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_adaptive_scaffold:
   gap:
+  responsive_framework:
 
 dev_dependencies:
   flutter_test:
