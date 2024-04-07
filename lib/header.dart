@@ -7,7 +7,8 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
       title: const Row(
         children: [
           Text('Fluter LP Playground'),

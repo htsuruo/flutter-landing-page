@@ -9,47 +9,28 @@ class FirstView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height - Header.height,
-      color: Colors.grey,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'EyeCatch',
+              'Your Awesome App',
               style: ShadTheme.of(context).textTheme.h1Large.copyWith(
-                    fontSize: 100,
+                    fontSize: 80,
                   ),
             ),
-            FilledButton(
-              onPressed: () {},
-              child: const Text('text'),
-            ),
-            const Gap(16),
-            // ShadButton(
-            //   text: const Text('Primary'),
-            //   size: ShadButtonSize.lg,
-            //   onPressed: () {},
-            // ),
+            const Gap(40),
             ShadButton(
+              text: const Text(
+                'Your Conversion Button is Here!',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               size: ShadButtonSize.lg,
               onPressed: () {},
-              gradient: const LinearGradient(
-                colors: [
-                  Colors.cyan,
-                  Colors.indigo,
-                ],
-              ),
-              shadows: [
-                BoxShadow(
-                  color: Colors.blue.withOpacity(.4),
-                  spreadRadius: 4,
-                  blurRadius: 10,
-                  offset: const Offset(0, 2),
-                ),
-              ],
-              text: const Text('Get your ticket'),
             ),
           ],
         ),
