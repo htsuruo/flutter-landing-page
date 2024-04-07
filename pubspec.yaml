@@ -12,6 +12,7 @@ dependencies:
   gap:
   responsive_framework:
   shadcn_ui:
+  websafe_svg:
 
 dev_dependencies:
   flutter_test:
@@ -20,3 +21,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/

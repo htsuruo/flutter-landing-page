@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
+import 'package:websafe_svg/websafe_svg.dart';
 
 class Header extends StatelessWidget implements PreferredSizeWidget {
   const Header({super.key});
@@ -10,11 +11,11 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       toolbarHeight: 80,
       elevation: 0,
-      title: const Row(
+      title: Row(
         children: [
-          Text('Fluter LP Playground'),
-          Spacer(),
-          PageLinks(),
+          WebsafeSvg.asset('assets/logo.svg', height: 32),
+          const Spacer(),
+          const PageLinks(),
         ],
       ),
     );
