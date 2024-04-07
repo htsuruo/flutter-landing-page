@@ -8,6 +8,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.transparent,
+      toolbarHeight: 80,
       elevation: 0,
       title: const Row(
         children: [
@@ -20,7 +21,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => AppBar().preferredSize;
+  Size get preferredSize => const Size(double.infinity, 80);
 
   static double get height => const Header().preferredSize.height;
 }
