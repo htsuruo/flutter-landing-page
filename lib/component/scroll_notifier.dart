@@ -7,15 +7,15 @@ part 'scroll_notifier.g.dart';
 // ignore: unsupported_provider_value
 class ScrollNotifier extends _$ScrollNotifier {
   @override
-  ScrollController build() {
-    return ScrollController();
-  }
+  ScrollController build() => ScrollController();
 
-  void scroll() {
-    state.animateTo(
-      state.position.maxScrollExtent,
-      duration: const Duration(seconds: 1),
-      curve: Curves.easeInOut,
-    );
-  }
+  void scrollTop() => _animateTo(Offset.zero.dy);
+
+  void scroll() => _animateTo(state.position.maxScrollExtent);
+
+  void _animateTo(double offset) => state.animateTo(
+        offset,
+        duration: const Duration(milliseconds: 700),
+        curve: Curves.easeInOut,
+      );
 }
