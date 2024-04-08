@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lp_playground/first_view.dart';
-import 'package:flutter_lp_playground/header.dart';
+import 'package:flutter_landing_page/first_view.dart';
+import 'package:flutter_landing_page/header.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';

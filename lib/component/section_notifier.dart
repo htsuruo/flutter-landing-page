@@ -1,4 +1,4 @@
-import 'package:flutter_lp_playground/sections/section.dart';
+import 'package:flutter_landing_page/sections/section.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'section_notifier.g.dart';

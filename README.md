@@ -1,3 +1,3 @@
-# flutter_lp_playground
+# Flutter Landing Page
 
 A new Flutter project.

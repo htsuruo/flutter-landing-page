@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lp_playground/component/scroll_notifier.dart';
-import 'package:flutter_lp_playground/component/section_notifier.dart';
-import 'package:flutter_lp_playground/sections/section.dart';
+import 'package:flutter_landing_page/component/scroll_notifier.dart';
+import 'package:flutter_landing_page/component/section_notifier.dart';
+import 'package:flutter_landing_page/sections/section.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:websafe_svg/websafe_svg.dart';
