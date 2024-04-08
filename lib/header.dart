@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lp_playground/component/section_notifier.dart';
+import 'package:flutter_lp_playground/sections/section.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
@@ -15,7 +18,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
         children: [
           WebsafeSvg.asset('assets/logo.svg', height: 32),
           const Spacer(),
-          const PageLinks(),
+          const _PageLinks(),
         ],
       ),
     );
@@ -27,29 +30,20 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
   static double get height => const Header().preferredSize.height;
 }
 
-class PageLinks extends StatelessWidget {
-  const PageLinks({super.key});
+class _PageLinks extends ConsumerWidget {
+  const _PageLinks();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Row(
       children: [
-        ShadButton.link(
-          text: const Text('Section 1'),
-          onPressed: () {},
-        ),
-        ShadButton.link(
-          text: const Text('Section 2'),
-          onPressed: () {},
-        ),
-        ShadButton.link(
-          text: const Text('Section 3'),
-          onPressed: () {},
-        ),
-        ShadButton.link(
-          text: const Text('Section 4'),
-          onPressed: () {},
-        ),
+        for (final section in Section.values)
+          ShadButton.link(
+            text: Text(section.name),
+            onPressed: () {
+              ref.read(sectionNotifierProvider.notifier).select(section);
+            },
+          ),
       ],
     );
   }
