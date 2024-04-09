@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_landing_page/component/scroll_notifier/scroll_notifier.dart';
 import 'package:flutter_landing_page/component/size_listener.dart';
 import 'package:flutter_landing_page/sections/section.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
-class SectionView extends StatefulWidget {
+class SectionView extends ConsumerStatefulWidget {
   const SectionView({super.key, required this.section});
 
   final Section section;
 
   @override
-  State<SectionView> createState() => _SectionViewState();
+  ConsumerState<SectionView> createState() => _SectionViewState();
 }
 
-class _SectionViewState extends State<SectionView> {
+class _SectionViewState extends ConsumerState<SectionView> {
   double height = 0;
 
   late final key = GlobalObjectKey(widget.section.index);
@@ -26,7 +28,10 @@ class _SectionViewState extends State<SectionView> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final renderBox = key.currentContext!.findRenderObject()! as RenderBox;
       final position = renderBox.localToGlobal(Offset.zero);
-      print(position.dy);
+      ref.read(scrollNotifierProvider.notifier).updateSectionPosition(
+            section: widget.section,
+            dy: position.dy,
+          );
     });
   }
 

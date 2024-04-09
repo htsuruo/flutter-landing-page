@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_landing_page/component/scroll_notifier.dart';
-import 'package:flutter_landing_page/component/section_notifier.dart';
 import 'package:flutter_landing_page/sections/section.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:websafe_svg/websafe_svg.dart';
+
+import 'component/scroll_notifier/scroll_notifier.dart';
 
 class Header extends ConsumerWidget implements PreferredSizeWidget {
   const Header({super.key});
@@ -50,7 +50,7 @@ class _PageLinks extends ConsumerWidget {
           ShadButton.link(
             text: Text(section.name),
             onPressed: () {
-              ref.read(sectionNotifierProvider.notifier).select(section);
+              ref.read(scrollNotifierProvider.notifier).selectSection(section);
             },
           ),
       ],

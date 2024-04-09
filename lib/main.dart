@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
-import 'component/scroll_notifier.dart';
+import 'component/scroll_notifier/scroll_notifier.dart';
 import 'footer.dart';
 import 'sections/section.dart';
 import 'sections/section_view.dart';
@@ -34,7 +34,9 @@ class MainApp extends ConsumerWidget {
       home: Scaffold(
         appBar: const Header(),
         body: SingleChildScrollView(
-          controller: ref.watch(scrollNotifierProvider),
+          controller: ref.watch(
+            scrollNotifierProvider.select((s) => s.controller),
+          ),
           child: Column(
             children: [
               const FirstView(),

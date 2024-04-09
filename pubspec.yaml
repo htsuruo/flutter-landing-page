@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod:
+  freezed_annotation:
   gap:
   provider:
   responsive_framework:
@@ -22,6 +23,7 @@ dev_dependencies:
   custom_lint:
   flutter_test:
     sdk: flutter
+  freezed:
   pedantic_mono:
   riverpod_generator:
   riverpod_lint:
