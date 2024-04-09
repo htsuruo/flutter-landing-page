@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_landing_page/component/size_listener.dart';
+import 'package:flutter_landing_page/sections/section.dart';
 import 'package:gap/gap.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class SectionView extends StatefulWidget {
-  const SectionView({super.key, required this.color});
+  const SectionView({super.key, required this.section});
 
-  final Color color;
+  final Section section;
 
   @override
   State<SectionView> createState() => _SectionViewState();
@@ -15,15 +16,30 @@ class SectionView extends StatefulWidget {
 class _SectionViewState extends State<SectionView> {
   double height = 0;
 
+  late final key = GlobalObjectKey(widget.section.index);
+
+  @override
+  void initState() {
+    super.initState();
+
+    // スクロール用にSectionの座標を取得
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final renderBox = key.currentContext!.findRenderObject()! as RenderBox;
+      final position = renderBox.localToGlobal(Offset.zero);
+      print(position.dy);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = ShadTheme.of(context);
 
     return Stack(
+      key: key,
       alignment: Alignment.topCenter,
       children: [
         ColoredBox(
-          color: widget.color,
+          color: ShadTheme.of(context).colorScheme.background,
           child: SizedBox(
             width: double.infinity,
             height: height,

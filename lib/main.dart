@@ -7,6 +7,7 @@ import 'package:shadcn_ui/shadcn_ui.dart';
 
 import 'component/scroll_notifier.dart';
 import 'footer.dart';
+import 'sections/section.dart';
 import 'sections/section_view.dart';
 
 void main() {
@@ -34,14 +35,12 @@ class MainApp extends ConsumerWidget {
         appBar: const Header(),
         body: SingleChildScrollView(
           controller: ref.watch(scrollNotifierProvider),
-          child: const Column(
+          child: Column(
             children: [
-              FirstView(),
-              SectionView(color: Colors.red),
-              SectionView(color: Colors.black),
-              SectionView(color: Colors.blue),
-              SectionView(color: Colors.green),
-              Footer(),
+              const FirstView(),
+              for (final section in Section.values)
+                SectionView(section: section),
+              const Footer(),
             ],
           ),
         ),
