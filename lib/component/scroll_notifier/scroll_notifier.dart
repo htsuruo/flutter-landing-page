@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_landing_page/component/scroll_notifier/scroll_section.dart';
 import 'package:flutter_landing_page/header.dart';
@@ -17,9 +19,12 @@ class ScrollNotifier extends _$ScrollNotifier {
 
   void scrollTop() => _animateTo(Offset.zero.dy);
 
-  void selectSection(Section section) => _animateTo(
-        _getSection(section).$2 - Header.height,
-      );
+  void selectSection(Section section) {
+    final sectionPosition = _getSection(section).$2 - Header.height;
+    final maxPosition = state.controller.position.maxScrollExtent;
+    // maxScrollExtentを超えないようにminで制限
+    _animateTo(min(sectionPosition, maxPosition));
+  }
 
   void updateSectionPosition({required Section section, required double dy}) {
     state = state.copyWith(
