@@ -20,7 +20,7 @@ extension on ThemeMode {
   bool get isDark => this == ThemeMode.dark;
 }
 
-extension on Brightness {
+extension BrightnessX on Brightness {
   bool get isDark => this == Brightness.dark;
 }
 
@@ -29,8 +29,7 @@ class ThemeSwitchButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Platformのシステム設定を取得して現在のテーマモードを取得
-    final brightness = MediaQuery.platformBrightnessOf(context);
+    final brightness = ShadTheme.of(context).brightness;
     final themeMode = ref.watch(themeNotifierProvider) == ThemeMode.system
         ? brightness.isDark
             ? ThemeMode.dark

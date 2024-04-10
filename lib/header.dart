@@ -16,20 +16,12 @@ class Header extends ConsumerWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       toolbarHeight: 80,
       elevation: 0,
-      title: Row(
+      title: const Row(
         children: [
-          MouseRegion(
-            cursor: SystemMouseCursors.click,
-            child: GestureDetector(
-              child: WebsafeSvg.asset('assets/logo.svg', height: 32),
-              onTap: () {
-                ref.read(scrollNotifierProvider.notifier).scrollTop();
-              },
-            ),
-          ),
-          const Spacer(),
-          const _PageLinks(),
-          const ThemeSwitchButton(),
+          _AppLogo(),
+          Spacer(),
+          _PageLinks(),
+          ThemeSwitchButton(),
         ],
       ),
     );
@@ -39,6 +31,26 @@ class Header extends ConsumerWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size(double.infinity, 80);
 
   static double get height => const Header().preferredSize.height;
+}
+
+class _AppLogo extends ConsumerWidget {
+  const _AppLogo();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final logoFile = ShadTheme.of(context).brightness.isDark
+        ? 'assets/logo_dark.svg'
+        : 'assets/logo_light.svg';
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        child: WebsafeSvg.asset(logoFile, height: 32),
+        onTap: () {
+          ref.read(scrollNotifierProvider.notifier).scrollTop();
+        },
+      ),
+    );
+  }
 }
 
 class _PageLinks extends ConsumerWidget {
