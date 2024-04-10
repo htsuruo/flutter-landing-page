@@ -30,6 +30,7 @@ xxx
 - Auto Size Text - [auto_size_text](https://pub.dev/packages/auto_size_text)
 - SEO/OGP Support - [meta_seo](https://pub.dev/packages/meta_seo), [seo](https://pub.dev/packages/seo)
 - Light/Dark Theme - [adaptive_theme](https://pub.dev/packages/adaptive_theme)
+- shadcn/ui - [shadcn_ui](https://pub.dev/packages/shadcn_ui)
 - Initial Loading Indicator - [Display a progress indicator](https://docs.flutter.dev/platform-integration/web/initialization#example-display-a-progress-indicator)
 - Smooth Scroll to Each Section
 
