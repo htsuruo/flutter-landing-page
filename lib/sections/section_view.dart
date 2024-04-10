@@ -25,6 +25,8 @@ class _SectionViewState extends ConsumerState<SectionView> {
     super.initState();
 
     // スクロール用にSectionの座標を取得
+    // TODO(htsuruo): 初回ロード時にセクションの座標を取得しているため
+    // ウィンドウサイズを手動で変更した場合に正しい位置にスクロールされない問題がある
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final renderBox = key.currentContext!.findRenderObject()! as RenderBox;
       final position = renderBox.localToGlobal(Offset.zero);
