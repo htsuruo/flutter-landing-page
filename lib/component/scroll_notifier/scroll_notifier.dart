@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_landing_page/component/scroll_notifier/scroll_section.dart';
 import 'package:flutter_landing_page/header.dart';
-import 'package:flutter_landing_page/sections/section.dart';
+import 'package:flutter_landing_page/section/section.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'scroll_notifier.g.dart';

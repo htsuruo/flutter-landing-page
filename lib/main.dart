@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_landing_page/component/theme_notifier.dart';
 import 'package:flutter_landing_page/first_view.dart';
 import 'package:flutter_landing_page/header.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -22,6 +23,7 @@ class MainApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return ShadApp(
+      themeMode: ref.watch(themeNotifierProvider),
       builder: (context, child) => ResponsiveBreakpoints.builder(
         child: child!,
         breakpoints: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_landing_page/sections/section.dart';
+import 'package:flutter_landing_page/component/theme_notifier.dart';
+import 'package:flutter_landing_page/section/section.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:websafe_svg/websafe_svg.dart';
@@ -28,6 +29,7 @@ class Header extends ConsumerWidget implements PreferredSizeWidget {
           ),
           const Spacer(),
           const _PageLinks(),
+          const ThemeSwitchButton(),
         ],
       ),
     );
