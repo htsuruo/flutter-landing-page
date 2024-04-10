@@ -16,9 +16,8 @@ class SectionView extends ConsumerStatefulWidget {
 }
 
 class _SectionViewState extends ConsumerState<SectionView> {
-  double height = 0;
-
-  late final key = GlobalObjectKey(widget.section.index);
+  late final _key = GlobalObjectKey(widget.section.index);
+  double _height = 0;
 
   @override
   void initState() {
@@ -28,7 +27,7 @@ class _SectionViewState extends ConsumerState<SectionView> {
     // TODO(htsuruo): 初回ロード時にセクションの座標を取得しているため
     // ウィンドウサイズを手動で変更した場合に正しい位置にスクロールされない問題がある
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final renderBox = key.currentContext!.findRenderObject()! as RenderBox;
+      final renderBox = _key.currentContext!.findRenderObject()! as RenderBox;
       final position = renderBox.localToGlobal(Offset.zero);
       ref.read(scrollNotifierProvider.notifier).updateSectionPosition(
             section: widget.section,
@@ -42,20 +41,20 @@ class _SectionViewState extends ConsumerState<SectionView> {
     final theme = ShadTheme.of(context);
 
     return Stack(
-      key: key,
+      key: _key,
       alignment: Alignment.topCenter,
       children: [
         ColoredBox(
           color: ShadTheme.of(context).colorScheme.background,
           child: SizedBox(
             width: double.infinity,
-            height: height,
+            height: _height,
           ),
         ),
         SizeListener(
           onSizeChanged: (Size size) {
             setState(() {
-              height = size.height;
+              _height = size.height;
             });
           },
           child: Padding(
