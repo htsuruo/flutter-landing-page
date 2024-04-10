@@ -26,8 +26,11 @@ xxx
 
 ## Features
 
-- SEO/OGP support
+- Responsive
+- SEO Support
+- OGP Support
 - Initial Loading Indicator
+- Smooth Scroll to Each Section
 
 ## SEO
 
