@@ -7,8 +7,8 @@ import 'package:shadcn_ui/shadcn_ui.dart';
 
 import 'component/scroll_notifier/scroll_notifier.dart';
 import 'footer.dart';
-import 'sections/section.dart';
-import 'sections/section_view.dart';
+import 'section/section.dart';
+import 'section/section_view.dart';
 
 void main() {
   runApp(
