@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_landing_page/component/theme_notifier.dart';
+import 'package:flutter_landing_page/component/component.dart';
 import 'package:flutter_landing_page/first_view.dart';
 import 'package:flutter_landing_page/header.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
-import 'component/scroll_notifier/scroll_notifier.dart';
 import 'footer.dart';
 import 'section/section.dart';
 import 'section/section_view.dart';

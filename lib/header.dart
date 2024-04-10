@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_landing_page/component/theme_notifier.dart';
+import 'package:flutter_landing_page/component/component.dart';
 import 'package:flutter_landing_page/section/section.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:websafe_svg/websafe_svg.dart';
-
-import 'component/scroll_notifier/scroll_notifier.dart';
 
 class Header extends ConsumerWidget implements PreferredSizeWidget {
   const Header({super.key});

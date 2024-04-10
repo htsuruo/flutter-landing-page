@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_landing_page/component/scroll_notifier/scroll_notifier.dart';
-import 'package:flutter_landing_page/component/size_listener.dart';
+import 'package:flutter_landing_page/component/component.dart';
 import 'package:flutter_landing_page/section/section.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
