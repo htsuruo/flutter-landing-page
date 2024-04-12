@@ -56,36 +56,40 @@ class _SectionViewState extends ConsumerState<SectionView> {
               _height = size.height;
             });
           },
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 80),
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width / 2,
-              child: Column(
-                children: [
-                  Text(
-                    'Section Title',
-                    style: theme.textTheme.h2.copyWith(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 44,
+          child: SizedBox(
+            // TODO(htsuruo): 画面サイズでレスポンシブ調整する
+            width: 1280,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 80),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width / 2,
+                child: Column(
+                  children: [
+                    Text(
+                      'Section Title',
+                      style: theme.textTheme.h2.copyWith(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 44,
+                      ),
                     ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
-                    child: SizedBox(
-                      width: 100,
-                      child: Divider(thickness: 1, color: Colors.white),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20),
+                      child: SizedBox(
+                        width: 100,
+                        child: Divider(thickness: 1, color: Colors.white),
+                      ),
                     ),
-                  ),
-                  const Gap(60),
-                  Center(
-                    child: Text(
-                      // ignore: lines_longer_than_80_chars
-                      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                      style: theme.textTheme.p,
+                    const Gap(60),
+                    Center(
+                      child: Text(
+                        // ignore: lines_longer_than_80_chars
+                        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                        style: theme.textTheme.p,
+                      ),
                     ),
-                  ),
-                  const Gap(40),
-                ],
+                    const Gap(40),
+                  ],
+                ),
               ),
             ),
           ),
