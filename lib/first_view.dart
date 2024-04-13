@@ -8,7 +8,7 @@ class FirstView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.7,
+      height: MediaQuery.sizeOf(context).height * 0.7,
       child: Stack(
         alignment: Alignment.center,
         children: [
