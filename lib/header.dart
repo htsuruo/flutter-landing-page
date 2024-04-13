@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_landing_page/component/component.dart';
 import 'package:flutter_landing_page/section/section.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:websafe_svg/websafe_svg.dart';
+
+import 'const.dart';
 
 class Header extends ConsumerWidget implements PreferredSizeWidget {
   const Header({super.key});
@@ -14,13 +17,16 @@ class Header extends ConsumerWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       toolbarHeight: 80,
       elevation: 0,
-      title: const Row(
-        children: [
-          _AppLogo(),
-          Spacer(),
-          _PageLinks(),
-          ThemeSwitchButton(),
-        ],
+      title: const MaxWidthBox(
+        maxWidth: Layout.maxWidth,
+        child: Row(
+          children: [
+            _AppLogo(),
+            Spacer(),
+            _PageLinks(),
+            ThemeSwitchButton(),
+          ],
+        ),
       ),
     );
   }
