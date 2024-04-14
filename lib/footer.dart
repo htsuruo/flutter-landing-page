@@ -17,7 +17,7 @@ class Footer extends StatelessWidget {
       height: 240,
       width: MediaQuery.sizeOf(context).width,
       color: theme.colorScheme.secondary,
-      child: MaxWidthBox(
+      child: const MaxWidthBox(
         maxWidth: Layout.maxWidth,
         child: Center(
           child: Column(
@@ -28,22 +28,19 @@ class Footer extends StatelessWidget {
                 children: [
                   _SNSIconButton(
                     filePath: 'assets/sns_x_mark.svg',
-                    onPressed: () {},
                   ),
-                  const Gap(16),
+                  Gap(16),
                   _SNSIconButton(
                     filePath: 'assets/sns_github_mark.svg',
-                    onPressed: () {},
                   ),
-                  const Gap(16),
+                  Gap(16),
                   _SNSIconButton(
                     filePath: 'assets/sns_discord_mark.svg',
-                    onPressed: () {},
                   ),
                 ],
               ),
-              const Gap(16),
-              const Text(
+              Gap(16),
+              Text(
                 '© 2024 YOUR ORGANIZATION, inc. All rights reserved.',
                 style: TextStyle(fontSize: 12),
               ),
@@ -56,10 +53,11 @@ class Footer extends StatelessWidget {
 }
 
 class _SNSIconButton extends StatelessWidget {
-  const _SNSIconButton({required this.filePath, required this.onPressed});
+  // ignore: unused_element
+  const _SNSIconButton({required this.filePath, this.onPressed});
 
   final String filePath;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +65,18 @@ class _SNSIconButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(12),
       icon: WebsafeSvg.asset(filePath, width: 20),
       size: ShadButtonSize.icon,
-      onPressed: onPressed,
+      onPressed: onPressed ??
+          () {
+            showShadDialog<void>(
+              context: context,
+              builder: (context) => ShadDialog.alert(
+                content: Text(
+                  'Navigation to External SNS Site',
+                  style: ShadTheme.of(context).textTheme.p,
+                ),
+              ),
+            );
+          },
     );
   }
 }
