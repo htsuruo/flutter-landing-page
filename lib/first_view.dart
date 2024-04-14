@@ -30,19 +30,18 @@ class FirstView extends StatelessWidget {
                   ShadButton(
                     text: const Text(
                       'Your Conversion Button is Here!',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     size: ShadButtonSize.lg,
                     onPressed: () {
                       showShadDialog<void>(
                         context: context,
-                        builder: (context) => const ShadDialog.alert(
-                          title: Text('Convertion Action is Here!'),
+                        builder: (context) => ShadDialog.alert(
+                          title: const Text('Conversion Action is Here!'),
                           content: Text(
                             // ignore: lines_longer_than_80_chars
                             'You can perform any desired processing such as linking to external sites.',
+                            style: ShadTheme.of(context).textTheme.p,
                           ),
                         ),
                       );
