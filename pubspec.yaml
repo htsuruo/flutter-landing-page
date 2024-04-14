@@ -16,6 +16,7 @@ dependencies:
   responsive_framework:
   riverpod_annotation:
   shadcn_ui:
+  url_launcher:
   websafe_svg:
 
 dev_dependencies:
