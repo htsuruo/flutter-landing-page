@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:intersperse/intersperse.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -21,6 +22,8 @@ class Footer extends StatelessWidget {
       ('assets/sns_discord_mark.svg', 'https://discord.com/'),
     ];
 
+    const gap = Gap(16);
+
     return Container(
       height: 240,
       width: MediaQuery.sizeOf(context).width,
@@ -33,15 +36,15 @@ class Footer extends StatelessWidget {
             children: [
               Row(
                 mainAxisSize: MainAxisSize.min,
-                children: [
+                children: <Widget>[
                   for (final sns in snsComponents)
                     _SNSIconButton(
                       filePath: sns.$1,
                       externalLink: sns.$2,
                     ),
-                ],
+                ].intersperse(gap).toList(),
               ),
-              const Gap(16),
+              gap,
               const Text(
                 '© 2024 YOUR ORGANIZATION, inc. All rights reserved.',
                 style: TextStyle(fontSize: 12),

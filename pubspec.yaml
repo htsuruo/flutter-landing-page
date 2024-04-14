@@ -12,6 +12,7 @@ dependencies:
   flutter_riverpod:
   freezed_annotation:
   gap:
+  intersperse:
   provider:
   responsive_framework:
   riverpod_annotation:
