@@ -34,6 +34,14 @@ xxx
 - Light/Dark Theme
 - Smooth Scroll to Each Section
 
+## Google PageSpeed Insights Score
+
+[PageSpeed Insights](https://pagespeed.web.dev/)
+
 ## SEO
 
 xxx
+
+## References
+
+- [Optimizing Flutter Web App Initial Load Times - Stack Overflow](https://stackoverflow.com/questions/78145531/optimizing-flutter-web-app-initial-load-times)
