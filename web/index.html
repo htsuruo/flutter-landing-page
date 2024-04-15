@@ -38,17 +38,44 @@
     </script>
     <!-- This script adds the flutter initialization JS code -->
     <script src="flutter.js" defer></script>
+    <style>
+      /* TODO(htsuruo) Light・Darkモードで切り替えられるようにしたい */
+      body {
+        background-color: #020817;
+      }
+      .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      #loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFF;
+      }
+    </style>
   </head>
   <body>
+    <div class="container">
+      <div id="loading"></div>
+    </div>
     <script>
       window.addEventListener('load', function (ev) {
+        var loading = document.querySelector('#loading');
+        loading.textContent = "Loading entrypoint...";
+
         // Download main.dart.js
         _flutter.loader.loadEntrypoint({
           serviceWorker: {
             serviceWorkerVersion: serviceWorkerVersion,
           },
           onEntrypointLoaded: function (engineInitializer) {
+            loading.textContent = "Initializing engine...";
+
             engineInitializer.initializeEngine().then(function (appRunner) {
+              loading.textContent = "Running app...";
               appRunner.runApp()
             })
           },
