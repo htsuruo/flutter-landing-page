@@ -22,13 +22,16 @@ This repository is an experiment to see if it's possible to achieve a user exper
 
 ## Screenshot
 
-xxx
+| Light Theme | Dark Theme |
+|--------|--------|
+| ![](./screenshots/preview_light_theme.png) | ![](./screenshots/preview_dark_theme.png) |
 
 ## Features
 
-- Responsive Layout - [responsive_framework](https://pub.dev/packages/responsive_framework)
-- Auto Size Text - [auto_size_text](https://pub.dev/packages/auto_size_text)
-- SEO/OGP Support - [meta_seo](https://pub.dev/packages/meta_seo), [seo](https://pub.dev/packages/seo)
+- [WIP]Responsive Layout - [responsive_framework](https://pub.dev/packages/responsive_framework)
+- [WIP]Auto Size Text - [auto_size_text](https://pub.dev/packages/auto_size_text)
+- [WIP]SEO/OGP Support - [seo](https://pub.dev/packages/seo)
+  - we can also use [meta_seo](https://pub.dev/packages/meta_seo) if routing support.
 - Initial Loading Indicator - [Display a progress indicator](https://docs.flutter.dev/platform-integration/web/initialization#example-display-a-progress-indicator)
 - shadcn/ui - [shadcn_ui](https://pub.dev/packages/shadcn_ui)
 - Light/Dark Theme
@@ -38,9 +41,11 @@ xxx
 
 [PageSpeed Insights](https://pagespeed.web.dev/)
 
+WIP
+
 ## SEO
 
-xxx
+WIP
 
 ## References
 
