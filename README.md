@@ -33,6 +33,7 @@ This repository is an experiment to see if it's possible to achieve a user exper
 - [WIP]SEO/OGP Support - [seo](https://pub.dev/packages/seo)
   - we can also use [meta_seo](https://pub.dev/packages/meta_seo) if routing support.
 - Initial Loading Indicator - [Display a progress indicator](https://docs.flutter.dev/platform-integration/web/initialization#example-display-a-progress-indicator)
+  - [Dark theme CSS](https://gist.github.com/mono0926/a270b38f97dcb409158addc45e5c5ab7)
 - shadcn/ui - [shadcn_ui](https://pub.dev/packages/shadcn_ui)
 - Light/Dark Theme
 - Smooth Scroll to Each Section
