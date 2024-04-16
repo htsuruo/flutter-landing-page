@@ -45,3 +45,4 @@ xxx
 ## References
 
 - [Optimizing Flutter Web App Initial Load Times - Stack Overflow](https://stackoverflow.com/questions/78145531/optimizing-flutter-web-app-initial-load-times)
+- [FlutterでWebアプリをリリースする際にやったこと](https://zenn.dev/enoiu/articles/e9dbc4d4b70a5c)
