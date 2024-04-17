@@ -47,7 +47,7 @@ class _SectionViewState extends ConsumerState<SectionView> {
       alignment: Alignment.topCenter,
       children: [
         ColoredBox(
-          color: ShadTheme.of(context).colorScheme.background,
+          color: theme.colorScheme.background,
           child: SizedBox(
             width: MediaQuery.sizeOf(context).width,
             height: _height,
