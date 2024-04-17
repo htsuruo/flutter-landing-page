@@ -13,18 +13,19 @@ class Header extends ConsumerWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final isLargerMobile = ResponsiveBreakpoints.of(context).largerThan(MOBILE);
     return AppBar(
       backgroundColor: Colors.transparent,
       toolbarHeight: 80,
       elevation: 0,
-      title: const MaxWidthBox(
+      title: MaxWidthBox(
         maxWidth: Layout.maxWidth,
         child: Row(
           children: [
-            _AppLogo(),
-            Spacer(),
-            _PageLinks(),
-            ThemeSwitchButton(),
+            const _AppLogo(),
+            const Spacer(),
+            if (isLargerMobile) const _PageLinks(),
+            const ThemeSwitchButton(),
           ],
         ),
       ),
