@@ -27,7 +27,8 @@ class Footer extends StatelessWidget {
     return Container(
       height: 240,
       width: MediaQuery.sizeOf(context).width,
-      color: theme.colorScheme.secondary,
+      // AppBarの`scrolledUnderElevation`のColorに合わせる調整
+      color: theme.colorScheme.foreground.withOpacity(0.05),
       child: MaxWidthBox(
         maxWidth: Layout.maxWidth,
         child: Center(
