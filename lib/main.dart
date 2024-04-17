@@ -1,3 +1,7 @@
+import 'dart:io';
+
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_landing_page/component/component.dart';
 import 'package:flutter_landing_page/first_view.dart';
@@ -12,7 +16,12 @@ import 'section/section_view.dart';
 
 void main() {
   runApp(
-    const ProviderScope(child: MainApp()),
+    ProviderScope(
+      child: DevicePreview(
+        enabled: !kIsWeb && Platform.isMacOS && kDebugMode,
+        builder: (context) => const MainApp(),
+      ),
+    ),
   );
 }
 
