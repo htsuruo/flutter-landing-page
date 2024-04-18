@@ -16,38 +16,41 @@ class FirstView extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Your Awesome App',
-                    style: ShadTheme.of(context).textTheme.h1Large.copyWith(
-                          fontSize: 80,
-                        ),
-                  ),
-                  const Gap(40),
-                  ShadButton(
-                    text: const Text(
-                      'Your Conversion Button is Here!',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    size: ShadButtonSize.lg,
-                    onPressed: () {
-                      showShadDialog<void>(
-                        context: context,
-                        builder: (context) => ShadDialog.alert(
-                          title: const Text('Conversion Action is Here!'),
-                          content: Text(
-                            // ignore: lines_longer_than_80_chars
-                            'You can perform any desired processing such as linking to external sites.',
-                            style: ShadTheme.of(context).textTheme.p,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Your Awesome App',
+                      style: ShadTheme.of(context).textTheme.h1Large.copyWith(
+                            fontSize: 80,
                           ),
-                        ),
-                      );
-                    },
-                  ),
-                ],
+                    ),
+                    const Gap(40),
+                    ShadButton(
+                      text: const Text(
+                        'Your Conversion Button is Here!',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      size: ShadButtonSize.lg,
+                      onPressed: () {
+                        showShadDialog<void>(
+                          context: context,
+                          builder: (context) => ShadDialog.alert(
+                            title: const Text('Conversion Action is Here!'),
+                            content: Text(
+                              // ignore: lines_longer_than_80_chars
+                              'You can perform any desired processing such as linking to external sites.',
+                              style: ShadTheme.of(context).textTheme.p,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
             const Positioned(

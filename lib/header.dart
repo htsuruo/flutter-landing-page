@@ -13,7 +13,8 @@ class Header extends ConsumerWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isLargerMobile = ResponsiveBreakpoints.of(context).largerThan(MOBILE);
+    final isDesktopLarger =
+        ResponsiveBreakpoints.of(context).largerThan(TABLET);
 
     return AppBar(
       backgroundColor: Colors.transparent,
@@ -24,7 +25,7 @@ class Header extends ConsumerWidget implements PreferredSizeWidget {
           children: [
             const _AppLogo(),
             const Spacer(),
-            if (isLargerMobile) const _PageLinks(),
+            if (isDesktopLarger) const _PageLinks(),
             const ThemeSwitchButton(),
           ],
         ),
