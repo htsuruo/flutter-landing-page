@@ -67,9 +67,15 @@ class _SNSIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final color = ShadTheme.of(context).colorScheme.foreground;
+
     return ShadButton.outline(
       borderRadius: BorderRadius.circular(12),
-      icon: WebsafeSvg.asset(filePath, width: 20),
+      icon: WebsafeSvg.asset(
+        filePath,
+        width: 20,
+        colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+      ),
       size: ShadButtonSize.icon,
       onPressed: () {
         final uri = Uri.tryParse(externalLink);
